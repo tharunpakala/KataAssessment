@@ -1,0 +1,39 @@
+﻿@model KataAssessment.Models.User
+
+@{
+    ViewData["Title"] = "First Page";
+}
+
+<h1>First Page</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CityName" class="control-label"></label>
+                <input asp-for="CityName" class="form-control" />
+                <span asp-validation-for="CityName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YearOfJoining" class="control-label"></label>
+                <input asp-for="YearOfJoining" class="form-control" />
+                <span asp-validation-for="YearOfJoining" class="text-danger"></span>
+            </div> <br/>
+            <div class="form-group">
+                <input type="submit"value="Save" class="btn btn-primary align-btn-right" />
+                <a class="btn btn-primary" asp-action="Index">Retrieve</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
